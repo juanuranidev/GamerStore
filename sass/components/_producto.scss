@@ -1,0 +1,96 @@
+// Producto en la sección
+.producto {
+    border-radius: 1.25rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    padding: 1rem;
+    width: 18rem;
+    text-align: center;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+    background-color: white;
+    img{
+        margin-bottom: 2rem;
+    }
+    .informacionPrincipalProducto {
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .informacionSecundariaProducto {
+            @include flexRow();
+            justify-content: space-between;
+            align-items: center;
+            .precioProducto {
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+            p {
+                font-weight: 600;
+            }
+            button{
+                @include boton();
+                padding: 0.5rem 1.5rem;
+                cursor: pointer;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    
+                }
+            }
+            button:hover{
+               background-color: $hoverButton;
+            }
+        }
+        .cantidadProducto{
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+    }
+}
+
+// Producto en en Carrito
+.productoCarrito{
+    @include flexRow();
+    margin-top: 1rem;
+    .imagenCarrito{
+        @include flexRow();
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 4rem;
+        }
+    }
+    .tituloProductoCarrito{
+        @include flexColumn();
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5rem;
+        .nombreProducto{
+            font-size: 1em;
+            margin: 0 0 0.2rem 0;
+            font-weight: bold;
+        }
+        .precioYCantidadProducto{
+            @include flexRow();
+            justify-content: center;
+            align-items: center;
+            p{
+                font-size: 0.9rem;
+                font-weight: medium;
+            }
+            .precioProducto{
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }  
+    }
+    .botonCarrito{
+        // margin-right: 1rem;
+        i{
+            cursor: pointer;
+        }
+    }
+}
+
+
+

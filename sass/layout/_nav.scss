@@ -1,0 +1,88 @@
+nav {
+    @include flexColumn();
+    align-items: center;
+    margin: 0rem auto;
+    background-color: $primario;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);   
+    .divNavPrincipal{
+    @include flexRow();
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2rem;
+        .logoPrincipal{
+            display: flex;
+            justify-content: center;            
+            img{
+                width: 12rem;
+                height: 3rem;
+            }   
+        }
+        .boton {
+            display: flex;
+            justify-content: center;
+            button{
+                background: none;
+                border: none;
+                color: white;
+                margin: none;
+                padding: 1rem;
+                cursor: pointer;
+            }
+            button:hover{
+                @include boton();
+                background-color: $hoverButton;
+            }
+        }   
+    }
+    .divNavSecundario{
+        width: 100%;
+        background-color: $secundario;
+        i{
+            display: none;
+        }
+        ul {
+            @include flexRow();
+            justify-content: center;
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                li{
+                    font-size: 1.2rem;             
+                    padding: 1rem;
+                    font-weight: 600;
+                    color: #ffff;
+                }
+                li:hover {
+                    background: #ffff;
+                    color: $secundario;
+                }         
+            }
+        }
+    }   
+}
+
+
+@media (max-width: 768px){
+    nav {
+        .divNavPrincipal{
+        @include flexColumn();
+        align-items: center;
+        gap: 1rem;
+        }
+        .divNavSecundario{
+            width: 100%;
+            background-color: $secundario;
+            text-align: center;
+            i{
+                display: block;
+                color: #ffff;
+                margin: 1rem;
+            }
+            ul {
+                display: none;
+            }
+        }   
+    }
+}

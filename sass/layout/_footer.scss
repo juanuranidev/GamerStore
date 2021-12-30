@@ -1,0 +1,87 @@
+footer{
+    @include flexRow();
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: $primario;
+    padding: 1rem;
+    color: #ffff;
+    .contenidoDivPrincipal{
+        @include flexRow();
+        justify-content: center;
+        flex-wrap: wrap;
+        .seccionContenido{
+            margin: 1rem;
+            h3{
+                margin: 1rem 0;
+            }
+            .redesSocialesFooter{
+                @include flexRow();
+                justify-content: center;
+                img{
+                    width: 2rem;
+                    margin: 0 0.5rem;
+                }
+            }
+            p{
+                margin: 0.6rem 0;
+            }
+        }
+    }
+    .contenidoDivSecundario{
+        @include flexColumn();
+        justify-content: center;
+        align-items: center;
+        .seccionSuscripcion{
+            text-align: center;
+            h3{
+                margin: 1rem;
+            }
+            p{
+                margin: 1rem;
+            }
+            fieldset{
+                border:none;
+                .emailSuscribirse{
+                    width: 16rem;
+                    height: 2rem;
+                    margin-right: 1rem;
+                    padding: 0.3rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
+                }
+                .suscribirse{
+                    @include boton();
+                    background-color: $body;
+                    color: black;
+                    width: 7rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }       
+}
+.marca{
+    @include flexRow();
+    justify-content: center;
+    background-color: $primario;
+    padding: 1rem;
+    color: white;
+    .icons{
+        margin-right:0.5rem;
+    }
+}
+@media (max-width: 576px){
+    footer{
+        fieldset{
+            @include flexColumn();
+            align-items: center;
+            .suscribirse{
+                margin-top: 0.5rem;
+            }
+        }
+    }
+    .marca{
+        padding: 0rem 0rem 1rem 0rem;
+    }
+}

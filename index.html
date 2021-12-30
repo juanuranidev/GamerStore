@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sass/style.css">
+    <script src="https://kit.fontawesome.com/afb9e1b8d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="divNavPrincipal">
+                <div class="logoPrincipal">
+                    <a href="index.html"><img src="imagenes/test.png" alt="Logo Principal" class="logoPrincipal"></a>
+                </div>
+                <div class="boton">
+                    <button class="carrito" id="carrito"><i class="fas fa-shopping-cart fa-3x"></i></button>
+                </div>
+            </div>
+            <div class="divNavSecundario">
+                <i class="fas fa-bars fa-2x" id="botonUl"></i>
+                <ul id="ulNav">
+                    <a href="index.html"><li>Productos</li></a>
+                    <a href="#"><li>Marcas</li></a>
+                    <a href="#"><li>Nosotros</li></a>
+                    <a href="#"><li>Contacto</li></a>
+                    <a href="#"><li>Arma tu PC</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <h1>Nuestros Productos</h1>
+        <div class="mainContent">
+            <div class="aside">
+                <h2>Filtrar</h2>
+                <div class="filtros">
+                    <div class="filtro">
+                        <h3>Categoría</h3>
+                        <p><a href="#" id="microprocesadores">Microprocesadores</a></p>
+                        <p><a href="#" id="placasDeVideo">Placas de video</a></p>
+                        <p><a href="#" id="motherboards">Motherboards</a></p>
+                        <p><a href="#" id="memoriasRam">Memorias RAM</a></p>
+                        <p><a href="#" id="fuentes">Fuentes</a></p>
+                    </div>
+                    <div class="filtro">
+                        <h3>Precio</h3>
+                        <p><a href="#" id="hasta5">Hasta $5,000</a></p>
+                        <p><a href="#" id="hasta15">De $5,000 a $15,000</a></p>
+                        <p><a href="#" id="hasta30">De $15,000 a $30,000</a></p>
+                        <p><a href="#" id="hasta50">De $30,000 a $50,000</a></p>
+                        <p><a href="#" id="hasta100">De $50,000 a $100,000</a></p>
+                        <p><a href="#" id="masde100">Precio más de $100,000</a></p>
+                    </div>
+                    <div class="filtro">
+                        <h3>Marca</h3>
+                        <p><a href="" id="msi">MSI</a></p>
+                        <p><a href="" id="intel">Intel</a></p>
+                        <p><a href="" id="amd">AMD</a></p>
+                        <p><a href="" id="hyperx">HyperX</a></p>
+                        <p><a href="" id="gigabyte">Gigabyte</a></p>
+                        <p><a href="" id="asus">Asus</p></a>
+                        <p><a href="" id="palit">Palit</a></p>
+                        <p><a href="" id="pny">PNY</a></p>
+                        <p><a href="" id="corsair">Corsair</a></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="productos" id="divProductos"> 
+            </div>
+        </div>
+    </main>
+
+    <div id="avisoAgregadoCarrito">
+    <p>Agregado al Carrito</p>
+    <button id="cerrarAgregadoCarrito"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="divCarrito" id="divCarrito">
+    <div class="cerrarCarrito">
+        <h3>Cerrar carrito</h3>
+        <i class="fas fa-times fa-1x" id="botonCerrarCarrito"></i>
+    </div>
+    <div class="productosCarrito" id="productosCarrito">
+        <h3 id="agregaProductos">¡Agrega productos!</h3>
+    </div>
+    <div class="totalCarrito">
+        <h3 id="totalCarrito">Total: $0</h3>
+    </div>
+    <div class="botonCarrito">
+        <a href="html/carrito.html"><button id="botonVerCarrito">Ver Carrito</button></a>
+    </div>
+    </div>
+
+    <footer>
+    <div class="contenidoDivPrincipal">
+        <div class="seccionContenido">
+            <h3>Atención al cliente</h3>
+            <p>482817656</p>
+            <p>consultas@techstore.com.ar</p>
+        </div>
+        <div class="seccionContenido">
+            <h3>Horarios</h3>
+            <p>Lunes a Viernes de 10h a 17h</p>
+            <p>Sabados de 10h a 14h</p>
+        </div>
+        <div class="seccionContenido">
+            <h3>Nuestas Redes Sociales</h3>
+            <div class="redesSocialesFooter">
+                <img src="imagenes/instagram.png" alt="">
+                <img src="imagenes/tiktok.png" alt="">
+                <img src="imagenes/facebook.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="contenidoDivSecundario">
+        <div class="seccionSuscripcion">
+            <h3>Suscríbete para recibir las mejores promociones</h3>
+            <p>Sé el primero en enterarte de los nuevos lanzamientos</p>
+            <form action="#">
+                <fieldset class="fieldsetSuscripcion">
+                    <input type="text" name="infopersonal" placeholder="Tu email" class="emailSuscribirse">
+                    <input type="submit" value="Suscribirse" class="suscribirse">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    </footer>
+
+    <div class="marca">
+        <div class="icons">
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <p>by juan</p>
+    </div>
+
+<script>
+    
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+<script src="app/index.js"></script>
+
+</body>
+</html>

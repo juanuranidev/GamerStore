@@ -1,0 +1,112 @@
+// Fuente
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+// Variables
+// Colores
+$primario: #ff7e27;
+$secundario: #393232;
+$body: #EDEDED;
+$exito: #28a745;
+$advertencia: #ffc107;
+$error: #dc3545;
+$hoverButton: #dd6a1d;
+// Sombras
+$boxShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+
+
+// Mixings
+// Flex Row
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+// Flex Column
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+// Boton
+@mixin boton {
+    background-color: $primario;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    font-weight: 600;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+
+
+// Parciales
+@import "../sass/core/normalize";
+@import "../sass/pages/carrito";
+@import "../sass/pages/productos";
+@import "../sass/layout/footer";
+@import "../sass/layout/nav";
+@import "../sass/components/carrito";
+@import "../sass/components/producto";
+
+
+// General
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+body { 
+    background-color: $body;
+}
+
+
+// Aviso agregado al carrito
+#avisoAgregadoCarrito{
+    @include boton();
+    @include flexRow();
+    cursor: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: $exito;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    p{
+        padding: 1rem;
+        border-right: 1px solid white;
+    }
+    button{
+        background-color: $exito;
+        border: none;
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 0.25rem;
+    }
+}
+// Aviso sin productos
+#avisoSinProductos{
+    @include boton();
+    @include flexRow();
+    cursor: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: $advertencia;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #ffff;
+    p{
+        padding: 1rem;
+        border-right: 1px solid #ffff;
+    }
+    button{
+        background-color: $advertencia;
+        border: none;
+        color: #ffff;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+}

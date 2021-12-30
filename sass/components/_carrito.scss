@@ -1,0 +1,54 @@
+.divCarrito{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 20rem;
+    height: 100%;
+    bottom: 0px;
+    right: 0px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: $boxShadow;
+    .cerrarCarrito{
+        height: 5%;
+        @include flexRow();
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0.1rem solid lightgrey;
+        padding-bottom: 1rem;
+        i{
+            padding: 1rem;
+            cursor: pointer;
+        }
+    }
+    .productosCarrito{
+        height: 80%;
+        padding-bottom: 1rem;
+        overflow: auto;
+        h3{
+            text-align: center;
+            margin: 1rem;
+        }
+    }
+    .totalCarrito{
+        height: 5%;
+        @include flexRow();
+        justify-content: space-between;
+        align-items: center;
+        border-top: 0.1rem solid lightgrey;
+        padding-top: 1rem;
+    }
+    .botonCarrito{
+        height: 10%;
+        @include flexColumn();
+        justify-content: center;
+        align-items: stretch;
+        button{
+            @include boton();
+            width: 100%;
+            padding: 1rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+    }
+}

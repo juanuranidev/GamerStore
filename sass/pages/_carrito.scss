@@ -1,0 +1,325 @@
+.mainCarrito{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin: 0rem;
+    .tablaProductos{
+        width: calc(75% - 1rem);
+        background: white;
+        border-radius: 1.25rem;
+        margin-right: 1rem;
+        table{
+            border-collapse: separate;
+            border-spacing: 0 1rem;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            tbody{
+                border: 1px solid black;
+                tr{
+                    th{
+                        width: 20%;
+                        font-size: 1.5rem;
+                    }
+                    td{
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        img{
+                            width: 4rem;
+                        }
+                        button{
+                            @include boton();
+                            padding: 1rem 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .finalizarCompra{
+        width: 25%;
+        height: 100%;
+        padding: 1rem;
+        background: white;
+        border-radius: 1.25rem;
+        text-align: center;
+        h2{
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        p{
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        button{
+            @include boton();
+            padding: 1rem 1.2rem;
+        }
+    }
+}
+
+#pago{
+    background-color: white;
+    padding: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    h2{
+        margin-bottom: 1rem;
+    }
+    .datosCompra{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .datosPersona{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: calc(50% - 1rem);
+            margin-bottom: 2rem;
+            .conjuntoDeDatos{
+                display: flex;
+                gap: 1rem;
+                .dato{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                    
+                    label{
+                        margin-bottom: 0.5rem;
+                        font-weight: 600;
+                    }
+                    input{
+                        width: 15rem;
+                        border: 1px solid grey;
+                        border-radius: 0.4rem;
+                        height: 2rem;
+                        padding-left: 0.4rem;
+                    }
+                }
+            }  
+        }
+        .tarjeta{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2{
+                margin: 0rem;
+            }
+            .tarjetaEjemplo{
+                border-radius: 1.25rem;
+                background-color: lightgrey;
+                padding: 1rem;
+                height: 12rem;
+                width: 25rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 1rem;
+                .imagenTarjeta{
+                    height: 70%;
+                    .miniTarjeta{
+                        border-radius: 0.5rem;
+                        background-color: grey;
+                        height: 3rem;
+                        width: 6rem;
+                    }
+                }
+                .numerosTarjeta{
+                    height: 15%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    font-size: 1rem;
+                    gap: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+                .letrasTarjeta{
+                    height: 15%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    font-size: 1rem;
+                }
+            }
+            .datosTarjeta{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                width: calc(50% - 1rem);
+                .conjuntoDeDatos{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    .dato{
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        
+                        label{
+                            margin-bottom: 0.5rem;
+                            font-weight: 600;
+                        }
+                        input{
+                            width: 15rem;
+                            border: 1px solid grey;
+                            border-radius: 0.4rem;
+                            height: 2rem;
+                            padding-left: 0.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .botonPago{
+        margin: 2rem 0rem 1rem 0rem;
+        button{
+            @include boton();
+            padding: 1rem;
+        }
+    }
+    .pagoRealizado{
+        i{
+            margin-bottom: 1rem;
+        }
+        #rechazado{
+            color: #FF0000;
+        }
+        #exito{
+            color: #00a000;
+        }
+        h2{
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+        }
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: 992px){
+    .mainCarrito{
+        @include flexColumn();
+        align-items: baseline;
+        .tablaProductos{
+            width: 100%;
+            margin-bottom: 1rem;
+            table{
+                tbody{
+                    border: 1px solid black;
+                    tr{
+                        th{
+                            width: 20%;
+                            font-size: 1rem;
+                        }
+                        td{
+                            font-weight: 600;
+                            font-size: 0.8rem;
+                            img{
+                                width: 3rem;
+                            }
+                            button{
+                                padding: 0.5rem 0.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .finalizarCompra{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .mainCarrito{
+        @include flexColumn();
+        align-items: baseline;
+        .tablaProductos{
+            width: 100%;
+            margin-bottom: 1rem;
+            table{
+                padding: 0rem 1rem;
+                tbody{
+                    border: 1px solid black;
+                    tr{
+                        th{
+                            font-size: 0.6rem;
+                        }
+                        td{
+                            font-size: 0.6rem;
+                            img{
+                                width: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #pago{
+        .datosCompra{
+            .datosPersona{
+                width: 100%;
+                .conjuntoDeDatos{
+                    @include flexColumn();
+                }  
+            }
+            .tarjeta{
+                width: 100%;
+                .tarjetaEjemplo{
+                    height: 8rem;
+                    width: 16rem;
+                    margin: 1rem 1rem 2rem 1rem;
+                    .imagenTarjeta{
+                        height: 70%;
+                        .miniTarjeta{
+                            height: 2rem;
+                            width: 3rem;
+                        }
+                    }
+                    .numerosTarjeta{
+                        font-size: 0.8rem;
+                    }
+                    .letrasTarjeta{
+                        font-size: 0.8rem;
+                    }
+                }
+                .datosTarjeta{
+                    @include flexColumn();
+                    align-items: center;
+                    gap: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+        .botonPago{
+            margin: 1rem 0rem 0rem 0rem;
+        }
+    }
+    .pagoRealizado{
+        h2{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1rem;
+            .email{
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,274 @@
+[
+    {
+        "nombre": "Placa de video MSI Geforce GTX 1660 Super Ventus XS OC 6GB",
+        "precio": 145000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "msi",
+        "id": "msigtx1660"
+    },
+    {
+        "nombre": "Placa de video MSI Geforce RTX 3060ti Gaming X Dual",
+        "precio": 225000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "msi",
+        "id": "msirtx3060ti"
+    },
+    {
+        "nombre": "Placa de video Palit Geforce RTX 3070 Gaming Pro 8GB",
+        "precio": 235000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "palit",
+        "id": "palitrtx3070"
+    },
+    {
+        "nombre": "Placa de video Gigabyte Geforce RTX 3080ti Aorus 12gb",
+        "precio": 455000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "gigabyte",
+        "id": "gigabytertx3080ti"
+    },
+    {
+        "nombre": "Placa de video Palit Geforce RTX 3080 Gamerock 10gb",
+        "precio": 500000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "palit",
+        "id": "palitrtx3080"
+    },
+    {
+        "nombre": "Placa de video Asus Geforce RTX 2060 Dual OC 6GB",
+        "precio": 155000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "asus",
+        "id": "asusrtx2060"
+    },
+    {
+        "nombre": "Placa de video Gigabyte Geforce RTX 3090 Gaming OC 24gb",
+        "precio": 650000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "gigabyte",
+        "id": "gigabytertx3090"
+    },
+    {
+        "nombre": "Placa de video Asus Radeon RX 6800 Tuf Gaming OC 16GB",
+        "precio": 223000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "asus",
+        "id": "asusrx6800"
+    },
+    {
+        "nombre": "Placa de video MSI Radeon RX 6700 XT MECH 2X OC 12gb",
+        "precio": 220000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "msi",
+        "id": "msirx6700"
+    },
+    {
+        "nombre": "Placa de video MSI Radeon RX 6600 XT Gaming X 8GB",
+        "precio": 145000,
+        "cantidad": 1,
+        "categoria": "placasdevideo",
+        "marca": "msi",
+        "id": "msirx6600"
+    },
+    {
+        "nombre": "Microprocesador Intel I3 10100 4.3GHZ",
+        "precio": 24000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "intel",
+        "id": "inteli310100"
+    },
+    {
+        "nombre": "Microprocesador Intel I7 9700F 4.7GHZ",
+        "precio": 32000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "intel",
+        "id": "inteli79700f"
+    },
+    {
+        "nombre": "Microprocesador Intel I5 9600K 4.60GHZ",
+        "precio": 30000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "intel",
+        "id": "inteli59600k"
+    },
+    {
+        "nombre": "Microprocesador AMD Ryzen 3 3200G 3.6GHZ",
+        "precio": 38000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "amd",
+        "id": "amd33200g"
+    },
+    {
+        "nombre": "Microprocesador AMD Ryzen 5 3600 4.2GHZ",
+        "precio": 40000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "amd",
+        "id": "amd53600"
+    },
+    {
+        "nombre": "Microprocesador AMD Ryzen 7 3700X 4.4GHZ",
+        "precio": 45000,
+        "cantidad": 1,
+        "categoria": "microprocesadores",
+        "marca": "amd",
+        "id": "amd73700x"
+    },
+    {
+        "nombre": "Motherboard Gigabyte AM4 A320M-H",
+        "precio": 8000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "gigabyte",
+        "id": "gigabytea320m-h"
+    },
+    {
+        "nombre": "Motherboard Gigabyte B560M DS3H AC S1200",
+        "precio": 16000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "gigabyte",
+        "id": "gigabyteb560m"
+    },
+    {
+        "nombre": "Motherboard Gigabyte Z590 Aorus Elite",
+        "precio": 45000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "gigabyte",
+        "id": "gigabytez590"
+    },
+    {
+        "nombre": "Motherboard ASUS TUF B450M-PLUS II Gaming",
+        "precio": 12000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "asus",
+        "id": "asusb450m-plus"
+    },
+    {
+        "nombre": "Motherboard ASUS TUF GAMING B560M-PLUS WIFI",
+        "precio": 20000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "asus",
+        "id": "asusb560m-plus"
+    },
+    {
+        "nombre": "Motherboar ASUS ROG STRIX B450-F GAMING II",
+        "precio": 40000,
+        "cantidad": 1,
+        "categoria": "motherboards",
+        "marca": "asus",
+        "id": "asusb450-f"
+    },
+    {
+        "nombre": "Memoria RAM HyperX DDR4 4GB 2666MHZ",
+        "precio": 3000,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "hyperx",
+        "id": "hyperx4gb2666mhz"
+    },
+    {
+        "nombre": "Memoria RAM HyperX DDR4 8GB 3200MHZ",
+        "precio": 8000,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "hyperx",
+        "id": "hyperx8gb3200mhz"
+    },
+    {
+        "nombre": "Memoria RAM HyperX DDR4 16GB 3200MHZ",
+        "precio": 14000,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "hyperx",
+        "id": "hyperx16gb3200mhz"
+    },
+    {
+        "nombre": "Memoria RAM PNY DDR4 4GB 2666MHZ",
+        "precio": 2500,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "pny",
+        "id": "pny4gb2666mhz"
+    },
+    {
+        "nombre": "Memoria RAM PNY DDR4 8GB 3200MHZ",
+        "precio": 5000,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "pny",
+        "id": "pny8gb3200mhz"
+    },
+    {
+        "nombre": "Memoria RAM PNY DDR4 16GB 3200MHZ",
+        "precio": 10000,
+        "cantidad": 1,
+        "categoria": "memoriasram",
+        "marca": "pny",
+        "id": "pny16gb3200mhz"
+    },
+    {
+        "nombre": "Fuente Gigabyte 450W P450W 80+ Bronce",
+        "precio": 6000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "gigabyte",
+        "id": "gigabytep450w"
+    },
+    {
+        "nombre": "Fuente Gigabyte 550W P550B 80+ Bronce",
+        "precio": 8000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "gigabyte",
+        "id": "gigabytep550b"
+    },
+    {
+        "nombre": "Fuente Gigabyte 850W P850GM 80+ Gold Modular",
+        "precio": 30000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "gigabyte",
+        "id": "gigabytep850gm"
+    },
+    {
+        "nombre": "Fuente Corsair 450w CV450 80+ Bronce",
+        "precio": 6000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "corsair",
+        "id": "corsaircv450"
+    },
+    {
+        "nombre": "Fuente Corsair 550W CV550 80+ Bronce",
+        "precio": 7000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "corsair",
+        "id": "corsaircv550"
+    },
+    {
+        "nombre": "Fuente Corsair 650W CX650F 80+ Bronce Full Modular RGB White",
+        "precio": 15000,
+        "cantidad": 1,
+        "categoria": "fuentes",
+        "marca": "corsair",
+        "id": "corsaircx650f"
+    } 
+]

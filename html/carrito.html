@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../sass/style.css">
+    <script src="https://kit.fontawesome.com/afb9e1b8d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="divNavPrincipal">
+                <div class="logoPrincipal">
+                    <a href="../index.html"><img src="../imagenes/test.png" alt="Logo Principal" class="logoPrincipal"></a>
+                </div>
+            </div>
+            <div class="divNavSecundario">
+                <i class="fas fa-bars fa-2x" id="botonUl"></i>
+                <ul id="ulNav">
+                    <a href="../index.html"><li>Productos</li></a>
+                    <a href="#"><li>Marcas</li></a>
+                    <a href="#"><li>Nosotros</li></a>
+                    <a href="#"><li>Contacto</li></a>
+                    <a href="#"><li>Arma tu PC</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mainCarrito">
+        <div class="tablaProductos">
+            <table id="productosTabla"> 
+                <tr class="titulosTabla">
+                  <th>Imagen</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Eliminar</th>
+                </tr>
+              </table>
+        </div>      
+        <div class="finalizarCompra" id="finalizarCompra">
+            <h2>Tu pedido</h2>
+            <p id="totalPedido"></p>
+            <button id="botonFinalizarCompra">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <section id="pago">
+        <h2>Tus datos</h2>
+            <div class="datosCompra">
+                <div class="datosPersona">
+                    <div class="conjuntoDeDatos">
+                        <div class="dato">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre">
+                        </div>
+                        <div class="dato">
+                            <label for="nombre">Apellido</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="conjuntoDeDatos">
+                        <div class="dato">
+                            <label for="nombre">Teléfono</label>
+                            <input type="number">
+                        </div>
+                        <div class="dato">
+                            <label for="nombre">Dirección</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="conjuntoDeDatos">
+                        <div class="dato">
+                            <label for="nombre">Email</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="dato">
+                            <label for="nombre">DNI</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <h2>Datos de la tarjeta</h2>
+                    <div class="tarjetaEjemplo">
+                        <div class="imagenTarjeta">
+                            <div class="miniTarjeta"></div>
+                        </div>
+                        <div class="numerosTarjeta">
+                            <div>****</div>
+                            <div>****</div>
+                            <div>****</div>
+                            <div>****</div>
+                        </div>
+                        <div class="letrasTarjeta">
+                            <div>
+                                <p>Nombre y apellido</p>
+                            </div>  
+                            <div>
+                                <p>MM/AA</p>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="datosTarjeta">
+                        <div class="conjuntoDeDatos">
+                            <div class="dato">
+                                <label for="nombre">Número de tarjeta</label>
+                                <input type="number" id="numeroDeLaTarjeta">
+                            </div>
+                            <div class="dato">
+                                <label for="nombre">Nombre del titular</label>
+                                <input type="text" id="nombreDelTitularDeLaTarjeta">
+                            </div>
+                        </div>
+                        <div class="conjuntoDeDatos">
+                            <div class="dato">
+                                <label for="nombre">Vencimiento (MM/AA)</label>
+                                <input type="date" id="VencimientoDeLaTarjeta">
+                            </div>
+                            <div class="dato">
+                                <label for="nombre">Código de seguridad</label>
+                                <input type="number" id="codigoDeLaTarjeta">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="botonPago">
+                <button id="botonRealizarPago">Realizar pago</button>
+            </div>
+    </section>
+
+    <footer>
+        <div class="contenidoDivPrincipal">
+            <div class="seccionContenido">
+                <h3>Atención al cliente</h3>
+                <p>482817656</p>
+                <p>consultas@techstore.com.ar</p>
+            </div>
+            <div class="seccionContenido">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes de 10h a 17h</p>
+                <p>Sabados de 10h a 14h</p>
+            </div>
+            <div class="seccionContenido">
+                <h3>Nuestas Redes Sociales</h3>
+                <div class="redesSocialesFooter">
+                    <img src="../imagenes/instagram.png" alt="">
+                    <img src="../imagenes/tiktok.png" alt="">
+                    <img src="../imagenes/facebook.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="contenidoDivSecundario">
+            <div class="seccionSuscripcion">
+                <h3>Suscríbete para recibir las mejores promociones</h3>
+                <p>Sé el primero en enterarte de los nuevos lanzamientos</p>
+                <form action="#">
+                    <fieldset class="fieldsetSuscripcion">
+                        <input type="text" name="infopersonal" placeholder="Tu email" class="emailSuscribirse">
+                        <input type="submit" value="Suscribirse" class="suscribirse">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <div class="marca">
+        <div class="icons">
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <p>by juan</p>
+    </div>
+
+    <div id="avisoSinProductos">
+            <p>Sin productos en el carrito</p>
+        <button id="cerrarAvisoSinProductos"><i class="fas fa-times"></i></button>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+<script src="../app/carrito.js"></script>
+</body>
+</html>
