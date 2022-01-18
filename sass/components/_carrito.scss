@@ -1,14 +1,15 @@
 .divCarrito{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+    display: block;
+    position: fixed;
     width: 20rem;
     height: 100%;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0rem;
+    right: -100%;
+    opacity: 0;
     padding: 1rem;
     background-color: white;
     box-shadow: $boxShadow;
+    transition: all .1s ease;
     .cerrarCarrito{
         height: 5%;
         @include flexRow();
@@ -51,4 +52,10 @@
             cursor: pointer;
         }
     }
+}
+
+.active{
+    opacity: 1;
+    right: 0rem;
+    z-index: 1;
 }

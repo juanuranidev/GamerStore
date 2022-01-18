@@ -2,7 +2,7 @@
 $(document).ready(function() {
     localStorage.clear()
     $("#avisoAgregadoCarrito").hide()
-    $(".divCarrito").hide();
+    // $(".divCarrito").hide(); 
 });
 
 
@@ -189,10 +189,16 @@ fetch("productos.json")
     agregarProductosAlCarrito()
     // Cerrar aviso de agregado al carrito
     $("#cerrarAgregadoCarrito").click(() => $("#avisoAgregadoCarrito").hide())
+
+
+
     // Mostrar carrito
-    $("#carrito").click(() => $(".divCarrito").show("slide", {direction: "right"}, 200))
+    $("#carrito").click(() => $(".divCarrito").addClass('active'))
     // Cerrar carrito
-    $("#botonCerrarCarrito").click(() => $(".divCarrito").hide("slide", {direction: "right"}, 200))
+    $("#botonCerrarCarrito").click(() => $(".divCarrito").removeClass('active'))
+
+
+
     // Guardar los productos en el local storage
     let botonVerCarrito = document.getElementById("botonVerCarrito").addEventListener('click', () => carritoDeCompras.length >= 1 ? localStorage.setItem('productoLocalStorage', JSON.stringify(carritoDeCompras)) : null)
 
