@@ -1143,8 +1143,13 @@ footer .contenidoDivSecundario .seccionSuscripcion fieldset .suscribirse {
   color: white;
 }
 
-.marca .icons {
-  margin-right: 0.5rem;
+.marca p span {
+  color: #b6332b;
+}
+
+.marca p a {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 @media (max-width: 576px) {

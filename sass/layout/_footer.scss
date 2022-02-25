@@ -67,8 +67,14 @@ footer{
     background-color: $primario;
     padding: 1rem;
     color: white;
-    .icons{
-        margin-right:0.5rem;
+    p{
+        span{
+            color: #b6332b;
+        }
+        a{
+            color: #ffffff;
+            font-weight: 700;
+        }        
     }
 }
 @media (max-width: 576px){
