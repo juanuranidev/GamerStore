@@ -1,32 +1,3 @@
-// Document ready
-$(document).ready(function() {
-    localStorage.clear()
-    $("#avisoAgregadoCarrito").hide()
-});
-
-
-// Nav
-$("#botonUl").click(function(){
-    $("#ulNav").toggle("fast","linear");
-  });
-
-
-// Arrays
-const carritoDeCompras = [];
-
-
-/*
---------------------
---Cargar productos--
---------------------*/
-fetch("productos.json")
-.then(response => response.json())
-.then(data => {data.forEach((producto) => producto.precio *= 1.21)
-
-/*
--------------------
------Funciones-----
--------------------*/
 // Función para imprimir el producto en el HTML
 function imprimirProductos(producto) {
     $("#divProductos").append(`
@@ -121,7 +92,7 @@ function agregarProductosAlCarrito(){
     
         // Detectar producto   
         let targetDelProducto = e.target
-        let productoParaElCarrito = data.find(producto => producto.id === targetDelProducto.id)
+        let productoParaElCarrito = productos.find(producto => producto.id === targetDelProducto.id)
         const existe = carritoDeCompras.includes(productoParaElCarrito)
     
         // Detectar si ya existe en el carrito
@@ -142,6 +113,7 @@ function agregarProductosAlCarrito(){
 }
 // Función para mostrar los productos filtrados
 function mostrarProductosFiltrados(filtro, array, mensaje) {
+    console.log(array)
     $(filtro).click((e) => {
         let main = document.getElementById("main")
         main.scrollIntoView()
@@ -162,56 +134,35 @@ function mostrarProductosFiltrados(filtro, array, mensaje) {
         // Limpiar filtro
     $("#limpiarFiltro").click(() => {
         $("#divProductos").empty()
-        for (const producto of data) {imprimirProductos(producto)}
+        for (const producto of productos) {imprimirProductos(producto)}
         $(".filtro").show()
         $("#avisoFiltros").remove()
         agregarProductosAlCarrito()
         })
     })
 }
-
-// Mostrar productos
-data.forEach((producto) => imprimirProductos(producto))
-
-/*
------------------
------Carrito-----
------------------*/
-agregarProductosAlCarrito()
-$("#carrito").click(() => $(".divCarrito").addClass('active'))
-$("#botonCerrarCarrito").click(() => $(".divCarrito").removeClass('active'))
-$("#cerrarAgregadoCarrito").click(() => $("#avisoAgregadoCarrito").hide())
-let botonVerCarrito = document.getElementById("botonVerCarrito").addEventListener('click', () => carritoDeCompras.length >= 1 ? localStorage.setItem('productoLocalStorage', JSON.stringify(carritoDeCompras)) : null)
-
-/*
------------------
------Filtros-----
------------------*/
-let microprocesadores = data.filter(function(producto) {return (producto.categoria === "microprocesadores")})
-let placasDeVideo = data.filter(function(producto) {return (producto.categoria === "placasdevideo")})
-let motherboards = data.filter(function(producto) {return (producto.categoria === "motherboards")})
-let memoriasRam = data.filter(function(producto) {return (producto.categoria === "memoriasram")})
-let fuentes = data.filter(function(producto) {return (producto.categoria === "fuentes")})
-let precioHasta5 = data.filter(function(producto) {return (producto.precio <= 5000)})
-let precioHasta15 = data.filter(function(producto) {return (producto.precio > 5000 && producto.precio <= 15000)})
-let precioHasta30 = data.filter(function(producto) {return (producto.precio > 15000 && producto.precio <= 30000)})
-let precioHasta50 = data.filter(function(producto) {return (producto.precio > 30000 && producto.precio <= 50000)})
-let precioHasta100 = data.filter(function(producto) {return(producto.precio > 50000 && producto.precio <= 100000)})
-let precioMasde100 = data.filter(function(producto) {return(producto.precio > 100000)})
-let msi = data.filter(function(producto) {return (producto.marca === "msi")})
-let intel = data.filter(function(producto) {return (producto.marca === "intel")})
-let amd = data.filter(function(producto) {return (producto.marca === "amd")})
-let hyperx = data.filter(function(producto) {return (producto.marca === "hyperx")})
-let gigabyte = data.filter(function(producto) {return (producto.marca === "gigabyte")})
-let asus = data.filter(function(producto) {return (producto.marca === "asus")})
-let palit = data.filter(function(producto) {return (producto.marca === "palit")})
-let pny = data.filter(function(producto) {return (producto.marca === "pny")})
-let corsair = data.filter(function(producto) {return (producto.marca === "corsair")})
-
-/*
------------------------------
--Mostrar productos filtrados-
------------------------------*/
+// Función para crear los filtros
+function crearFiltros() {
+let microprocesadores = productos.filter(function(producto) {return (producto.categoria === "microprocesadores")})
+let placasDeVideo = productos.filter(function(producto) {return (producto.categoria === "placasdevideo")})
+let motherboards = productos.filter(function(producto) {return (producto.categoria === "motherboards")})
+let memoriasRam = productos.filter(function(producto) {return (producto.categoria === "memoriasram")})
+let fuentes = productos.filter(function(producto) {return (producto.categoria === "fuentes")})
+let precioHasta5 = productos.filter(function(producto) {return (producto.precio <= 5000)})
+let precioHasta15 = productos.filter(function(producto) {return (producto.precio > 5000 && producto.precio <= 15000)})
+let precioHasta30 = productos.filter(function(producto) {return (producto.precio > 15000 && producto.precio <= 30000)})
+let precioHasta50 = productos.filter(function(producto) {return (producto.precio > 30000 && producto.precio <= 50000)})
+let precioHasta100 = productos.filter(function(producto) {return(producto.precio > 50000 && producto.precio <= 100000)})
+let precioMasde100 = productos.filter(function(producto) {return(producto.precio > 100000)})
+let msi = productos.filter(function(producto) {return (producto.marca === "msi")})
+let intel = productos.filter(function(producto) {return (producto.marca === "intel")})
+let amd = productos.filter(function(producto) {return (producto.marca === "amd")})
+let hyperx = productos.filter(function(producto) {return (producto.marca === "hyperx")})
+let gigabyte = productos.filter(function(producto) {return (producto.marca === "gigabyte")})
+let asus = productos.filter(function(producto) {return (producto.marca === "asus")})
+let palit = productos.filter(function(producto) {return (producto.marca === "palit")})
+let pny = productos.filter(function(producto) {return (producto.marca === "pny")})
+let corsair = productos.filter(function(producto) {return (producto.marca === "corsair")})
 mostrarProductosFiltrados("#microprocesadores", microprocesadores, "la categoría microprocesadores")
 mostrarProductosFiltrados("#placasDeVideo", placasDeVideo, "la categoría<br>placas de video")
 mostrarProductosFiltrados("#motherboards", motherboards, "la categoría<br>motherboards")
@@ -232,4 +183,43 @@ mostrarProductosFiltrados("#asus", asus, "la marca<br>Asus")
 mostrarProductosFiltrados("#palit", palit, "la marca<br>Palit")
 mostrarProductosFiltrados("#pny", pny, "la marca<br>PNY")
 mostrarProductosFiltrados("#corsair", corsair, "la marca<br>Corsair")
+}
+
+// Document ready
+$(document).ready(function() {
+    localStorage.clear()
+    $("#avisoAgregadoCarrito").hide()
+});
+
+// Nav
+$("#botonUl").click(function(){
+    $("#ulNav").toggle("fast","linear");
+});
+
+// Arrays
+const carritoDeCompras = [];
+const productos = []
+
+/*
+--------------------
+--Cargar productos--
+--------------------*/
+fetch("productos.json")
+.then(response => response.json())
+.then(data => {data.forEach((producto) => productos.push(producto))})
+.finally(() => {
+    productos.forEach(producto => imprimirProductos(producto));
+    crearFiltros();
 })
+
+/*
+-----------------
+-----Carrito-----
+-----------------*/
+agregarProductosAlCarrito()
+$("#carrito").click(() => $(".divCarrito").addClass('active'))
+$("#botonCerrarCarrito").click(() => $(".divCarrito").removeClass('active'))
+$("#cerrarAgregadoCarrito").click(() => $("#avisoAgregadoCarrito").hide())
+let botonVerCarrito = document.getElementById("botonVerCarrito").addEventListener('click', () => carritoDeCompras.length >= 1 ? localStorage.setItem('productoLocalStorage', JSON.stringify(carritoDeCompras)) : null)
+
+
