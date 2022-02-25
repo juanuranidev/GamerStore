@@ -2,7 +2,6 @@
 $(document).ready(function() {
     localStorage.clear()
     $("#avisoAgregadoCarrito").hide()
-    // $(".divCarrito").hide(); 
 });
 
 
@@ -22,19 +21,14 @@ const carritoDeCompras = [];
 --------------------*/
 fetch("productos.json")
 .then(response => response.json())
-.then(data => {
-    data.forEach((producto) => {
-        // Sumado de iva
-        producto.precio *= 1.21;
-        })
+.then(data => {data.forEach((producto) => producto.precio *= 1.21)
 
-
-    /*
-    -------------------
-    -----Funciones-----
-    -------------------*/
-    // Función para imprimir el producto en el HTML
-    function imprimirProductos(producto) {
+/*
+-------------------
+-----Funciones-----
+-------------------*/
+// Función para imprimir el producto en el HTML
+function imprimirProductos(producto) {
     $("#divProductos").append(`
     <div class="producto">
         <img src="../imagenes/${producto.id}.png" alt="Imagen de Producto">
@@ -47,9 +41,9 @@ fetch("productos.json")
         </div> 
     </div>
     `)
-    }
-    // Función para imprimir el producto en el carrito
-    function imprimirEnCarrito(){
+}
+// Función para imprimir el producto en el carrito
+function imprimirEnCarrito(){
     for (const producto of carritoDeCompras) {
         $("#productosCarrito").append(`
         <div class="productoCarrito" id="div${producto.id}">
@@ -69,9 +63,9 @@ fetch("productos.json")
         </div>
         `);
     }
-    }
-    // Función para actualizar el precio del carrito
-    function actualizarTotal(){
+}
+// Función para actualizar el precio del carrito
+function actualizarTotal(){
     let precioTotalDeCadaProducto = 0
     let precioTotalDelCarrito = 0
     carritoDeCompras.forEach (producto => {
@@ -81,9 +75,9 @@ fetch("productos.json")
     textoDePrecioTotal.innerHTML=`Total: $${precioTotalDelCarrito.toLocaleString('en-US')}`;
     localStorage.setItem('precioTotal', JSON.stringify(precioTotalDelCarrito));
     });
-    }
-    // Función para eliminar productos del carrito
-    function eliminarProductosDelCarrito(){
+}
+// Función para eliminar productos del carrito
+function eliminarProductosDelCarrito(){
         // Botón para eliminar producto
         let botonParaEliminarProducto = document.getElementsByClassName("botonParaEliminarProducto")
         // Recorrer todos lo botones
@@ -112,9 +106,9 @@ fetch("productos.json")
                 productoParaEliminar.cantidad = 1
             }
         })}
-    }
-    // Función agregar productos al carrito
-    function agregarProductosAlCarrito(){
+}
+// Función agregar productos al carrito
+function agregarProductosAlCarrito(){
     // Boton para agregar al carrito
     let botonParaAgregarProducto = document.getElementsByClassName("botonParaAgregarProducto");
     
@@ -145,9 +139,9 @@ fetch("productos.json")
             eliminarProductosDelCarrito()
         }   
     })}
-    }
-    // Función para mostrar los productos filtrados
-    function mostrarProductosFiltrados(filtro, array, mensaje) {
+}
+// Función para mostrar los productos filtrados
+function mostrarProductosFiltrados(filtro, array, mensaje) {
     $(filtro).click((e) => {
         let main = document.getElementById("main")
         main.scrollIntoView()
@@ -174,89 +168,68 @@ fetch("productos.json")
         agregarProductosAlCarrito()
         })
     })
-    }
+}
 
-    
-    // Mostrar productos
-    data.forEach((producto) => imprimirProductos(producto))
+// Mostrar productos
+data.forEach((producto) => imprimirProductos(producto))
 
+/*
+-----------------
+-----Carrito-----
+-----------------*/
+agregarProductosAlCarrito()
+$("#carrito").click(() => $(".divCarrito").addClass('active'))
+$("#botonCerrarCarrito").click(() => $(".divCarrito").removeClass('active'))
+$("#cerrarAgregadoCarrito").click(() => $("#avisoAgregadoCarrito").hide())
+let botonVerCarrito = document.getElementById("botonVerCarrito").addEventListener('click', () => carritoDeCompras.length >= 1 ? localStorage.setItem('productoLocalStorage', JSON.stringify(carritoDeCompras)) : null)
 
-    /*
-    -----------------
-    -----Carrito-----
-    -----------------*/
-    // Función para agregar productos al carrito
-    agregarProductosAlCarrito()
-    // Cerrar aviso de agregado al carrito
-    $("#cerrarAgregadoCarrito").click(() => $("#avisoAgregadoCarrito").hide())
+/*
+-----------------
+-----Filtros-----
+-----------------*/
+let microprocesadores = data.filter(function(producto) {return (producto.categoria === "microprocesadores")})
+let placasDeVideo = data.filter(function(producto) {return (producto.categoria === "placasdevideo")})
+let motherboards = data.filter(function(producto) {return (producto.categoria === "motherboards")})
+let memoriasRam = data.filter(function(producto) {return (producto.categoria === "memoriasram")})
+let fuentes = data.filter(function(producto) {return (producto.categoria === "fuentes")})
+let precioHasta5 = data.filter(function(producto) {return (producto.precio <= 5000)})
+let precioHasta15 = data.filter(function(producto) {return (producto.precio > 5000 && producto.precio <= 15000)})
+let precioHasta30 = data.filter(function(producto) {return (producto.precio > 15000 && producto.precio <= 30000)})
+let precioHasta50 = data.filter(function(producto) {return (producto.precio > 30000 && producto.precio <= 50000)})
+let precioHasta100 = data.filter(function(producto) {return(producto.precio > 50000 && producto.precio <= 100000)})
+let precioMasde100 = data.filter(function(producto) {return(producto.precio > 100000)})
+let msi = data.filter(function(producto) {return (producto.marca === "msi")})
+let intel = data.filter(function(producto) {return (producto.marca === "intel")})
+let amd = data.filter(function(producto) {return (producto.marca === "amd")})
+let hyperx = data.filter(function(producto) {return (producto.marca === "hyperx")})
+let gigabyte = data.filter(function(producto) {return (producto.marca === "gigabyte")})
+let asus = data.filter(function(producto) {return (producto.marca === "asus")})
+let palit = data.filter(function(producto) {return (producto.marca === "palit")})
+let pny = data.filter(function(producto) {return (producto.marca === "pny")})
+let corsair = data.filter(function(producto) {return (producto.marca === "corsair")})
 
-
-
-    // Mostrar carrito
-    $("#carrito").click(() => $(".divCarrito").addClass('active'))
-    // Cerrar carrito
-    $("#botonCerrarCarrito").click(() => $(".divCarrito").removeClass('active'))
-
-
-
-    // Guardar los productos en el local storage
-    let botonVerCarrito = document.getElementById("botonVerCarrito").addEventListener('click', () => carritoDeCompras.length >= 1 ? localStorage.setItem('productoLocalStorage', JSON.stringify(carritoDeCompras)) : null)
-
-
-    /*
-    -----------------
-    -----Filtros-----
-    -----------------*/
-    // Categoría
-    let microprocesadores = data.filter(function(producto) {return (producto.categoria === "microprocesadores")})
-    let placasDeVideo = data.filter(function(producto) {return (producto.categoria === "placasdevideo")})
-    let motherboards = data.filter(function(producto) {return (producto.categoria === "motherboards")})
-    let memoriasRam = data.filter(function(producto) {return (producto.categoria === "memoriasram")})
-    let fuentes = data.filter(function(producto) {return (producto.categoria === "fuentes")})
-    // Precio
-    let precioHasta5 = data.filter(function(producto) {return (producto.precio <= 5000)})
-    let precioHasta15 = data.filter(function(producto) {return (producto.precio > 5000 && producto.precio <= 15000)})
-    let precioHasta30 = data.filter(function(producto) {return (producto.precio > 15000 && producto.precio <= 30000)})
-    let precioHasta50 = data.filter(function(producto) {return (producto.precio > 30000 && producto.precio <= 50000)})
-    let precioHasta100 = data.filter(function(producto) {return(producto.precio > 50000 && producto.precio <= 100000)})
-    let precioMasde100 = data.filter(function(producto) {return(producto.precio > 100000)})
-    // Marca
-    let msi = data.filter(function(producto) {return (producto.marca === "msi")})
-    let intel = data.filter(function(producto) {return (producto.marca === "intel")})
-    let amd = data.filter(function(producto) {return (producto.marca === "amd")})
-    let hyperx = data.filter(function(producto) {return (producto.marca === "hyperx")})
-    let gigabyte = data.filter(function(producto) {return (producto.marca === "gigabyte")})
-    let asus = data.filter(function(producto) {return (producto.marca === "asus")})
-    let palit = data.filter(function(producto) {return (producto.marca === "palit")})
-    let pny = data.filter(function(producto) {return (producto.marca === "pny")})
-    let corsair = data.filter(function(producto) {return (producto.marca === "corsair")})
-
-    
-    /*
-    -----------------------------
-    -Mostrar productos filtrados-
-    -----------------------------*/
-    // Categoria
-    mostrarProductosFiltrados("#microprocesadores", microprocesadores, "la categoría microprocesadores")
-    mostrarProductosFiltrados("#placasDeVideo", placasDeVideo, "la categoría<br>placas de video")
-    mostrarProductosFiltrados("#motherboards", motherboards, "la categoría<br>motherboards")
-    mostrarProductosFiltrados("#memoriasRam", memoriasRam, "la categoría<br>memorias RAM")
-    mostrarProductosFiltrados("#fuentes", fuentes, "la categoría<br>fuentes")
-    // Precio
-    mostrarProductosFiltrados("#hasta5", precioHasta5, "productos de hasta<br>$5,000")
-    mostrarProductosFiltrados("#hasta15", precioHasta15, "productos desde $5,000 hasta $15,000")
-    mostrarProductosFiltrados("#hasta30", precioHasta30, "productos desde $15,000 hasta $30,000")
-    mostrarProductosFiltrados("#hasta50", precioHasta50, "productos desde $30,000 hasta $50,000")
-    mostrarProductosFiltrados("#hasta100", precioHasta100, "productos desde $50,000 hasta $100,000")
-    mostrarProductosFiltrados("#masde100", precioMasde100, "productos de más de $100,000")
-    // Marca
-    mostrarProductosFiltrados("#msi", msi, "la marca<br>MSI")
-    mostrarProductosFiltrados("#intel", intel, "la marca<br>Intel")
-    mostrarProductosFiltrados("#amd", amd, "la marca<br>AMD")
-    mostrarProductosFiltrados("#hyperx", hyperx, "la marca<br>HyperX")
-    mostrarProductosFiltrados("#gigabyte", gigabyte, "la marca<br>Gigabyte")
-    mostrarProductosFiltrados("#asus", asus, "la marca<br>Asus")
-    mostrarProductosFiltrados("#palit", palit, "la marca<br>Palit")
-    mostrarProductosFiltrados("#pny", pny, "la marca<br>PNY")
-    mostrarProductosFiltrados("#corsair", corsair, "la marca<br>Corsair")
+/*
+-----------------------------
+-Mostrar productos filtrados-
+-----------------------------*/
+mostrarProductosFiltrados("#microprocesadores", microprocesadores, "la categoría microprocesadores")
+mostrarProductosFiltrados("#placasDeVideo", placasDeVideo, "la categoría<br>placas de video")
+mostrarProductosFiltrados("#motherboards", motherboards, "la categoría<br>motherboards")
+mostrarProductosFiltrados("#memoriasRam", memoriasRam, "la categoría<br>memorias RAM")
+mostrarProductosFiltrados("#fuentes", fuentes, "la categoría<br>fuentes")
+mostrarProductosFiltrados("#hasta5", precioHasta5, "productos de hasta<br>$5,000")
+mostrarProductosFiltrados("#hasta15", precioHasta15, "productos desde $5,000 hasta $15,000")
+mostrarProductosFiltrados("#hasta30", precioHasta30, "productos desde $15,000 hasta $30,000")
+mostrarProductosFiltrados("#hasta50", precioHasta50, "productos desde $30,000 hasta $50,000")
+mostrarProductosFiltrados("#hasta100", precioHasta100, "productos desde $50,000 hasta $100,000")
+mostrarProductosFiltrados("#masde100", precioMasde100, "productos de más de $100,000")
+mostrarProductosFiltrados("#msi", msi, "la marca<br>MSI")
+mostrarProductosFiltrados("#intel", intel, "la marca<br>Intel")
+mostrarProductosFiltrados("#amd", amd, "la marca<br>AMD")
+mostrarProductosFiltrados("#hyperx", hyperx, "la marca<br>HyperX")
+mostrarProductosFiltrados("#gigabyte", gigabyte, "la marca<br>Gigabyte")
+mostrarProductosFiltrados("#asus", asus, "la marca<br>Asus")
+mostrarProductosFiltrados("#palit", palit, "la marca<br>Palit")
+mostrarProductosFiltrados("#pny", pny, "la marca<br>PNY")
+mostrarProductosFiltrados("#corsair", corsair, "la marca<br>Corsair")
 })

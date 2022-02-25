@@ -1,7 +1,6 @@
 // Fuente
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
-
 // Variables
 // Colores
 $primario: #ff7e27;
@@ -13,7 +12,6 @@ $error: #dc3545;
 $hoverButton: #dd6a1d;
 // Sombras
 $boxShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-
 
 // Mixings
 // Flex Row
@@ -37,7 +35,6 @@ $boxShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     cursor: pointer;
 }
 
-
 // Parciales
 @import "../sass/core/normalize";
 @import "../sass/pages/carrito";
@@ -46,7 +43,6 @@ $boxShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 @import "../sass/layout/nav";
 @import "../sass/components/carrito";
 @import "../sass/components/producto";
-
 
 // General
 * {
@@ -59,7 +55,6 @@ $boxShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 body { 
     background-color: $body;
 }
-
 
 // Aviso agregado al carrito
 #avisoAgregadoCarrito{
